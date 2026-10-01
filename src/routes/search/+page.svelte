@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Post from '$lib/components/Post.svelte';
+  import Post from '#lib/components/Post.svelte';
 
-    import { supabase } from '$lib/supabaseClient';
+    import { supabase } from '#lib/supabaseClient.js';
 
     let content = $state("");
     let user = $state("");
