@@ -11,53 +11,53 @@
     async function search() {
       posts = []
 
-      if (content == "" && user == "") {
+      if (content == "" && user == "") // if there's nothing in the fields, do nothing
+      {
         return
       }
 
-    if (user != "" && content != "") {
-        const { data, error } = await supabase
-            .from("posts")
-            .select("*")
-            .eq("username", user)
-            .ilike("content", "%" + content + "%")
+    if (user != "" && content != "") // user and content search
+    {
+        // TASK 5: Get Posts from a User AND contains XYZ
+        // const { data, error } = await supabase
 
-        if (error) {
-            console.log(error.message)
-            return
-        }
+        // if (error) {
+        //     console.log(error.message)
+        //     return
+        // }
 
-        posts = data
+        // posts = data
         return
     }
 
 
-      if (user != "") {
-        const { data, error } = await supabase
-          .from("posts")
-          .select("*")
-          .eq("username", user)
-        if (error) {
-          console.log(error.message)
-        }
+      if (user != "") // user search
+      {
+        // TASK 3: Get Posts from a User
+        // const { data, error } = await supabase
 
-        posts = data
+        // if (error) {
+        //   console.log(error.message)
+        // }
+
+        // posts = data
 
         return
     }
         
       
 
-      if (content != "") {
-        const { data, error } = await supabase
-          .from("posts")
-          .select("*")
-          .ilike("content", "%" + content + "%")
-        if (error) {
-          console.log(error.message)
-        }
+      if (content != "") // content contains search
+      {
 
-        posts = data
+        // TASK 4: Get Posts containing XYZ
+        // const { data, error } = await supabase
+
+        // if (error) {
+        //   console.log(error.message)
+        // }
+
+        // posts = data
 
         return
       }

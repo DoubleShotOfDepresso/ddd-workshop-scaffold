@@ -3,15 +3,16 @@ import { supabase } from "$lib/supabaseClient";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async () => {
-  const { data, error } = await supabase.from("posts").select("*");
+  // TASK 1: Get Messages
+  // const { data, error } = await supabase
 
-  if (error) {
-    console.error("Error loading messages:", error.message);
-    return { posts: [], error: error.message };
-  }
+  // if (error) {
+  //   console.error("Error loading posts:", error.message);
+  //   return { posts: [], error: error.message };
+  // }
 
   return {
-    posts: data ?? [],
+    // posts: data ?? [],
     error: null,
   };
 };

@@ -6,20 +6,15 @@
     let user = $state("");
 
     async function post() {
-        const { data, error } = await supabase
-            .from("posts")
-            .insert([
-                { username: user, content: content }
-            ])
-            .select()
+        // TASK 2: Post Messages
+        // const { data, error } = await supabase
 
-            content = ""
-        
+        content = ""
         await invalidateAll()
 
-        if (error) {
-            console.log(error.message)
-        }
+        // if (error) {
+        //     console.log(error.message)
+        // }
 
         }
 
