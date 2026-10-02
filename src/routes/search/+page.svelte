@@ -34,13 +34,16 @@
       if (user != "") // user search
       {
         // TASK 3: Get Posts from a User
-        // const { data, error } = await supabase
+        const { data, error } = await supabase
+          .from("posts")
+          .select("*")
+          .eq("username", user)
 
-        // if (error) {
-        //   console.log(error.message)
-        // }
+        if (error) {
+          console.log(error.message)
+        }
 
-        // posts = data
+        posts = data
 
         return
     }
